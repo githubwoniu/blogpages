@@ -14,38 +14,58 @@
 
 ### 1. 申请阿里云服务器
 *打开[阿里云ECS购买页面](http://s.click.taobao.com/t?e=m%3D2%26s%3DoXqaW8BMof0cQipKwQzePCperVdZeJviEViQ0P1Vf2kguMN8XjClAhqjqlb5%2F1QRo3LXBIiwY9G9bxOus5F1H7hoWH6iuiRcafepPYWKNwOB56JtIJT1gzDVuRn8ddiDsEVVC24eqozcHtRpEUy6RHVyxRO0gvF4QxJtmCgOmCLXl8Q7TEjBF%2BX11FSyvDCnQiv%2BJKjlPObGDmntuH4VtA%3D%3D)，并用淘宝账号登陆，可以按需购买。基础配置的话包月大约60元/月
+
 ![阿里云ECS购买](images/django-deploy-part1/1.png)
+
 在部署阶段也可以选择按使用流量付费，只需要32元/月，后续部署成功后进行配置升级
+
 ![按使用流量付费](images/django-deploy-part1/2.png)
 
 操作系统选择Ubuntu的最新版本
 填写登陆密码(**也是服务器的root密码，非常重要**)
 然后点击“立即购买”就可以了。
 ### 2. 进入管理控制台，查看实例列表
+
 ![服务器实例](images/django-deploy-part1/3.png)
+
 进入[管理控制台](https://ecs.console.aliyun.com/#/home)后，在左侧的工具条中选择“云服务器ECS”，选择“实例”就可以看到刚刚申请到的云服务器了（这里“实例”的意思就是云服务器）。   
 *注意图中蓝色圈住的地方，一定要选择申请时的区域，才能看到服务器实例。*
 ### 3. 设置服务器用户密码
 **如果在购买的时候设置了服务器密码可跳过此步**
 
 点击服务器实例右侧的“管理”，进入实例详情
+
 ![这里写图片描述](images/django-deploy-part1/4.png)
+
 点击“重置密码”
+
 ![这里写图片描述](images/django-deploy-part1/5.png)
+
 阿里云要求密码需要同时包含__大小写字母和数字__
+
 ![这里写图片描述](images/django-deploy-part1/6.png)
+
 重置密码后需要重启服务器
+
 ![这里写图片描述](images/django-deploy-part1/7.png)
+
 注意查看服务器状态
+
 ![这里写图片描述](images/django-deploy-part1/8.png)
+
 重启成功后，会变成绿色的“进行中”。此时才可以进行下一步。
 ### 4. 连接服务器
 在刚才“重置密码”的旁边有个“更多”按钮，点开下拉菜单即可找到“连接管理终端”的选项。
+
 ![这里写图片描述](images/django-deploy-part1/9.png)
+
 此时会弹出一个窗口，提示系统指定的终端管理密码，这个密码需要记住，在连接管理终端的时候需要输入。
 成功后出现下面的界面，需要点击左侧下拉菜单中的“连接管理终端”
+
 ![这里写图片描述](images/django-deploy-part1/10.png)
+
 点击后出现输入服务器用户名和密码的命令行界面
 用户名是__root__，密码是刚才重置密码时设置的密码。  
 _PS: 输入密码时命令行不会显示输入内容，正确输入后回车就可以了。_
+
 ![这里写图片描述](images/django-deploy-part1/11.png)
